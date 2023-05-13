@@ -29,7 +29,20 @@ const ADMIN_CORS =
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 const DATABASE_TYPE = process.env.DATABASE_TYPE || "postgres";
-const DATABASE_URL = process.env.DATABASE_URL || "postgresql://postgres:mac@localhost:5432/medusadb";
+
+//DIGITAL OCEAN
+const DB_USERNAME = process.env.DB_USERNAME
+const DB_PASSWORD = process.env.DB_PASSWORD
+const DB_HOST = process.env.DB_HOST
+const DB_PORT = process.env.DB_PORT
+const DB_DATABASE = process.env.DB_DATABASE
+
+const DATABASE_URL = 
+  `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
+  `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`
+
+// *OLD* process.env.DATABASE_URL || "postgresql://postgres:mac@localhost:5432/medusadb";
+
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
@@ -84,6 +97,7 @@ module.exports = {
     database_type: "postgres",
     database_url: DATABASE_URL,
     redis_url: REDIS_URL,
+    database_extra: { ssl: { rejectUnauthorized: false } },
   },
   plugins,
 	modules,
