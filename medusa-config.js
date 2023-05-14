@@ -42,7 +42,7 @@ const DATABASE_URL =
   `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`
 
-// OLD const DATABASE_URL = process.env.DATABASE_URL || "postgresql://postgres:mac@localhost:5432/medusadb";
+//const DATABASE_URL = process.env.DATABASE_URL || "postgressql://postgres:mac@localhost:5432/medusadb?sslmode=disable";
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
