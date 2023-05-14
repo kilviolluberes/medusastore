@@ -66,7 +66,7 @@ const plugins = [
         endpoint: process.env.SPACE_ENDPOINT,
         access_key_id: process.env.SPACE_ACCESS_KEY_ID,
         secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
-    }
+    },
   },
 ];
 
